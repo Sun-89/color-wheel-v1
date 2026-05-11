@@ -1,0 +1,121 @@
+/* ------------------------------------------------------ */
+/*  COLORWHEEL PRO — GLOBAL STYLES (Tailwind v4)          */
+/* ------------------------------------------------------ */
+
+@import "tailwindcss";
+
+/* ------------------------------------------------------ */
+/*  THEME — Variables Tailwind v4                         */
+/* ------------------------------------------------------ */
+
+
+
+@theme {
+  /* Couleurs principales */
+  --color-bg: #0b0b0f;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-strong: rgba(255, 255, 255, 0.08);
+
+  --color-primary: #7b5cff;        /* Violet électrique */
+  --color-primary-light: #a18aff;
+  --color-accent: #00e0ff;         /* Cyan néon */
+
+  /* Texte */
+  --color-text: #ffffff;
+  --color-text-dim: rgba(255,255,255,0.6);
+  --color-text-faint: rgba(255,255,255,0.35);
+
+  /* Typographie */
+  --font-sans: "Inter", sans-serif;
+
+  /* Ombres */
+  --shadow-soft: 0 4px 20px rgba(0,0,0,0.35);
+  --shadow-strong: 0 8px 30px rgba(0,0,0,0.5);
+
+  /* Radius */
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* ------------------------------------------------------ */
+/*  BASE — Styles généraux                                */
+/* ------------------------------------------------------ */
+
+* {
+  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+}
+
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------------------------------ */
+/*  PANELS — Glassmorphism premium                        */
+/* ------------------------------------------------------ */
+
+.panel {
+  background: var(--color-surface);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ------------------------------------------------------ */
+/*  TITRES & TEXTE                                        */
+/* ------------------------------------------------------ */
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.text-dim {
+  color: var(--color-text-dim);
+}
+
+.text-faint {
+  color: var(--color-text-faint);
+}
+
+/* ------------------------------------------------------ */
+/*  ANIMATIONS                                            */
+/* ------------------------------------------------------ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* ------------------------------------------------------ */
+/*  INTERACTIONS                                          */
+/* ------------------------------------------------------ */
+
+button, .panel, input, canvas {
+  transition: all 0.25s ease;
+}
+
+/* Accent color for sliders */
+input[type="range"] {
+  accent-color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: light) {
+  html, body {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  .panel {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+  }
+}
