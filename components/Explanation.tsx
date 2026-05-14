@@ -18,12 +18,16 @@ const explanationsMap: Record<string, string> = {
         "La palette monochromatique joue sur les variations de luminosité. Très élégante et minimaliste.",
 };
 
-export default function Explanation(): JSX.Element {
+export default function Explanation() {
     const { mode, hex, hue, saturation, lightness } = useColor();
 
     // Normalisation : accepte 'mono' ou 'monochromatic', 'split' ou 'split-complementary'
     const normalizedMode =
-        mode === "monochromatic" ? "monochromatic" : mode === "split" ? "split" : mode;
+    (mode as string) === "monochromatic"
+    ? "monochromatic"
+    : (mode as string) === "split"
+    ? "split"
+    : mode;
 
     const text = explanationsMap[normalizedMode] ?? explanationsMap["analogous"];
 
