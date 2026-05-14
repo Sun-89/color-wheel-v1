@@ -2,6 +2,7 @@
 export type PaletteMode =
     | "analogous"
     | "complementary"
+    | "split"
     | "triadic"
     | "tetradic"
     | "monochromatic";
