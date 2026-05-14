@@ -12,7 +12,7 @@ export default function ModeSelector({ onChange }: { onChange: (m: PaletteMode) 
         { label: "Split Complementary", value: "split" },
         { label: "Triadic", value: "triadic" },
         { label: "Tetradic", value: "tetradic" },
-        { label: "Monochromatic", value: "mono" },
+        { label: "Monochromatic", value: "monochromatic" },
     ];
 
     const handleSelect = (value: PaletteMode) => {
